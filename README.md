@@ -62,3 +62,21 @@ class GFG {
 	}
 }
 ```
+
+
+Q: https://practice.geeksforgeeks.org/problems/palindrome-string0817/1/
+```
+class Solution {
+    int isPalindrome(String S) {
+       return checkPalindrome(S, 0, S.length()-1);
+    }
+    
+    int checkPalindrome(String S, int start, int end){
+        if(start >= end)
+            return 1;
+        if(S.charAt(start) != S.charAt(end))
+            return 0;
+        return checkPalindrome(S, start+1, end-1);
+    } 
+};
+```
