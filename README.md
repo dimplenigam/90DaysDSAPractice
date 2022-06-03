@@ -80,3 +80,30 @@ class Solution {
     } 
 };
 ```
+
+
+
+Q: https://practice.geeksforgeeks.org/problems/reverse-a-string/1
+```
+class Reverse
+{
+    // Complete the function
+    // str: input string
+    public static String reverseWord(String str)
+    {
+        char[] arr = str.toCharArray();
+        arr = reverse(arr, 0, arr.length-1);
+        return new String(arr);
+    }
+    
+    private static char[] reverse(char[] arr, int start, int end){
+        if(start >= end)
+            return arr;
+        char temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        return reverse(arr, start+1, end-1);
+    }
+    
+}
+```
