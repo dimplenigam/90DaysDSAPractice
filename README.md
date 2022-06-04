@@ -107,3 +107,25 @@ class Reverse
     
 }
 ```
+
+
+
+Q : Subset Sum (https://practice.geeksforgeeks.org/problems/subset-sums2234/1/?page=1&difficulty[]=-1&category[]=Recursion&sortBy=submissions)
+```
+class Solution{
+    ArrayList<Integer> subsetSums(ArrayList<Integer> arr, int N){
+        ArrayList<Integer> result = new ArrayList<>();
+        process(arr, 0, 0, result);
+        Collections.sort(result);
+        return result;
+    }
+    void process (ArrayList<Integer> arr, int i, int sum, ArrayList<Integer> result){
+        if(i == arr.size()){
+            result.add(sum);
+            return;
+        }
+        process(arr, i+1, sum+arr.get(i), result);
+        process(arr, i+1, sum, result);
+    }
+}
+```
