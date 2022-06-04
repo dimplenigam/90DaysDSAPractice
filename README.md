@@ -21,13 +21,13 @@ https://www.youtube.com/watch?v=KXAbAa1mieU
 https://www.youtube.com/watch?v=Mr9MVpSoTGk
 
 ###### Theory :
-Recursion :- when a function calls itself
-3 steps for recursion:-
+1. Recursion :- when a function calls itself
+2. 3 steps for recursion:-
 	- Find a base case (stopping condition)
 	- Find relation between problems and sub problems (f(n) and f(n-1)/f(n+1))
 	- Generalise the relation
-Power set includes empty string/number
-Subsequence doesnot include it
+3. Power set includes empty string/number
+4. Subsequence doesnot include it
 
 ###### Questions :
 Q : https://practice.geeksforgeeks.org/problems/print-1-to-n-without-using-loops-1587115620/1/?page=1&difficulty[]=-2&difficulty[]=-1&category[]=Recursion&sortBy=submissions
