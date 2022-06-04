@@ -163,3 +163,84 @@ class Solution
     }
 }
 ```
+
+
+
+Q: Juggler Sequence (https://practice.geeksforgeeks.org/problems/juggler-sequence3930/1/?page=1&difficulty[]=-1&category[]=Recursion&sortBy=submissions)
+```
+class Solution{
+    static List<Integer> jugglerSequence(int N){
+        List<Integer> list = new ArrayList<>();
+        list.add(N);
+        helper(N, list, 1);
+        return list;
+    }
+    
+    static void helper(int N, List<Integer> list, int i){
+        int num = list.get(i-1);
+        if(num == 1)
+            return;
+        
+        double val = Math.sqrt(num);
+        if(num % 2 == 0)
+            list.add(i, (int)Math.floor(val));
+        else
+            list.add(i, (int)Math.floor(Math.pow(val, 3)));
+        helper(N, list, i+1);
+    }
+}
+```
+
+
+
+Q: 
+```
+```
+
+
+
+Q: 
+```
+```
+
+
+Q: 
+```
+```
+
+
+
+Q: 
+```
+```
+
+
+
+Q: 
+```
+```
+
+
+
+Q: 
+```
+```
+
+
+
+
+Q: 
+```
+```
+
+
+
+Q: 
+```
+```
+
+
+
+
+
+
