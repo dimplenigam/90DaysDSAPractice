@@ -129,3 +129,36 @@ class Solution{
     }
 }
 ```
+
+
+
+
+
+
+s[sada]asd
+Q: Power set/ Subsequence (https://practice.geeksforgeeks.org/problems/power-set4302/1/)
+```
+class Solution
+{
+    public List<String> AllPossibleStrings(String s)
+    {
+        List<String> result = new ArrayList<>();
+        process(s, "", 0, result);
+        result.remove("");
+        Collections.sort(result);
+        return result;
+    }
+    
+    void process(String str, String subStr, int i, List<String> result){
+        if(i == str.length()){
+            result.add(subStr);
+            return;
+        }
+        //take condition
+        process(str, subStr+str.charAt(i), i+1, result);
+        //not take condition
+        process(str, subStr, i+1, result);
+        
+    }
+}
+```
