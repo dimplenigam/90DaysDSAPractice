@@ -26,6 +26,8 @@ Recursion :- when a function calls itself
 	- Find a base case (stopping condition)
 	- Find relation between problems and sub problems (f(n) and f(n-1)/f(n+1))
 	- Generalise the relation
+Power set includes empty string/number
+Subsequence doesnot include it
 
 ###### Questions :
 Q : https://practice.geeksforgeeks.org/problems/print-1-to-n-without-using-loops-1587115620/1/?page=1&difficulty[]=-2&difficulty[]=-1&category[]=Recursion&sortBy=submissions
@@ -135,7 +137,6 @@ class Solution{
 
 
 
-s[sada]asd
 Q: Power set/ Subsequence (https://practice.geeksforgeeks.org/problems/power-set4302/1/)
 ```
 class Solution
