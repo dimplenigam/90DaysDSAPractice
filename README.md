@@ -193,8 +193,45 @@ class Solution{
 
 
 
-Q: 
+Q: https://practice.geeksforgeeks.org/problems/subsets-1613027340/1/#
 ```
+class Solution
+{
+    private static ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+    
+    public static ArrayList<ArrayList<Integer>> subsets(ArrayList<Integer> A)
+    {
+        ArrayList<Integer> list = new ArrayList<>();
+        helper(A, 0, list);
+        
+        Collections.sort(result, (x, y) -> {
+            for (int i = 0; i < Math.min(x.size(), y.size()); i++) {
+                if (x.get(i) != y.get(i)) {
+                    return x.get(i) - y.get(i);
+                }
+            }
+            return x.size() - y.size();
+        });
+        
+        return result;
+    }
+    
+    private static void helper(ArrayList<Integer> A, int index, 
+        ArrayList<Integer> list){
+        
+        if(index == A.size()){
+            result.add(list);
+            //list = null;
+            return;
+        }
+        
+        
+        helper(A, index+1, new ArrayList<Integer>(list));
+        list.add(A.get(index));
+        helper(A, index+1, new ArrayList<Integer>(list));
+        return;
+    }
+}
 ```
 
 
