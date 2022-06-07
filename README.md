@@ -236,8 +236,25 @@ class Solution
 
 
 
-Q: 
+Q: Subset Sum Problem (https://practice.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1/#)
 ```
+class Solution{
+    static Boolean isSubsetSum(int N, int arr[], int sum){
+        return helper(arr, 0, 0, sum);
+    }
+    
+    private static boolean helper(int arr[], int index, int calculatedSum, 
+                              int requiredSum){
+        if(index == arr.length)
+            return false;
+        if(calculatedSum > requiredSum)
+            return false;
+        if(calculatedSum == requiredSum)
+            return true;
+        return helper(arr, index+1, calculatedSum+arr[index], requiredSum) ||
+        helper(arr, index+1, calculatedSum, requiredSum);  
+    }
+}
 ```
 
 
