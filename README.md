@@ -258,8 +258,34 @@ class Solution{
 ```
 
 
-Q: 
+Q: Permutations (https://leetcode.com/problems/permutations/submissions/) 
 ```
+class Solution {
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        helper(nums, 0, result);
+        return result;
+    }
+    
+    private void helper(int[] arr, int i, List<List<Integer>> result){
+        if(i == arr.length){
+            result.add(Arrays.stream(arr).boxed().collect(Collectors.toList()));
+            return;
+        }
+        
+        for(int j=i; j<arr.length; j++){
+            swap(arr, i, j);
+            helper(arr, i+1, result);
+            swap(arr, i, j);
+        }
+    }
+    
+    private static void swap(int[] arr, int i, int j){
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+}
 ```
 
 
