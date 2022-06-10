@@ -290,8 +290,33 @@ class Solution {
 
 
 
-Q: 
+Q: Possible words from Phone digits (https://practice.geeksforgeeks.org/problems/possible-words-from-phone-digits-1587115620/1/#)
 ```
+class Solution
+{
+    static String[] keys = { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+    
+    //Function to find list of all words possible by pressing given numbers.
+    static ArrayList<String> possibleWords(int a[], int N)
+    {
+        ArrayList<String> result = new ArrayList<>();
+        helper(a, 0, "", result);
+        return result;
+    }
+    
+    private static void helper(int arr[], int index, String str, ArrayList<String> result){
+        if(index == arr.length){
+            result.add(str);
+            return;
+        }
+        
+        for(int i=0; i<keys[arr[index]].length(); i++){
+            String s = Character.toString(keys[arr[index]].charAt(i));
+            //System.out.println(s);
+            helper(arr, index+1, str+s, result);
+        }
+    }
+}
 ```
 
 
