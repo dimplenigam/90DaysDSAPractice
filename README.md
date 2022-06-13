@@ -393,6 +393,21 @@ class Solution {
 }
 ```
 
+```
+Changes for GFG SUbmission :
+static ArrayList<ArrayList<Integer>> combinationSum(ArrayList<Integer> A, int B)
+    {
+        HashSet <Integer> hs = new HashSet<>(A);
+        ArrayList <Integer> new_A = new ArrayList<>(hs);
+        Collections.sort(new_A);
+        
+        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+        helper(new_A, B, 0, new ArrayList<Integer>(), result);
+        return result;   
+    }
+```
+
+
 
 Q: 
 ```
