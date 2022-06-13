@@ -321,10 +321,113 @@ class Solution
 
 
 
+Q: Combinatipnal Sum (https://leetcode.com/problems/combination-sum/submissions/)
+```
+/*explained by Striver*/
+class Solution {
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        List<List<Integer>> result = new ArrayList<>();
+        helper(candidates, target, 0, new ArrayList<Integer>(), result);
+        return result;
+    }
+    
+    
+    void helper(int[] arr, int target, int index, List<Integer> list, List<List<Integer>> result){
+        
+        if(index == arr.length){
+            if(target == 0)
+                result.add(new ArrayList<>(list));
+            return;
+        }
+        
+        if(arr[index] <= target){
+            //pick-inclusion
+            list.add(arr[index]);
+            helper(arr, target-arr[index], index, list, result);
+            list.remove(list.size()-1);
+        }
+        
+        //not pick - exclusion
+        helper(arr, target, index+1, list, result);
+        return;
+    }
+}
+```
+
+```
+/* Solution by me*/
+class Solution {
+    static int required_sum = 0;
+    static int[] arr;
+    
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        required_sum = target;
+        arr = candidates;
+        List<List<Integer>> result = new ArrayList<>();
+        helper(0, 0, new ArrayList<Integer>(), result);
+        return result;
+    }
+    
+    
+    private static void helper(int i, int temp_sum, ArrayList<Integer> list, List<List<Integer>> result){
+        
+        if(i == arr.length || temp_sum > required_sum)
+            return;
+        
+        if(temp_sum == required_sum){
+            result.add(new ArrayList<>(list));
+            return;
+        }
+        
+        
+        for(int j=i; j<arr.length; j++){
+            list.add(arr[j]);
+            int s = temp_sum+arr[j];
+            helper(j, temp_sum+arr[j], list, result);
+            list.remove(list.size()-1);
+        }
+        
+        
+        return;
+    }
+}
+```
+
+
 Q: 
 ```
 ```
 
+
+
+
+Q: 
+```
+```
+
+
+
+Q: 
+```
+```
+
+
+Q: 
+```
+```
+
+
+
+
+Q: 
+```
+```
+
+
+
+Q: 
+```
+```
 
 
 Q: 
