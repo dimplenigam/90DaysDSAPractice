@@ -409,8 +409,57 @@ static ArrayList<ArrayList<Integer>> combinationSum(ArrayList<Integer> A, int B)
 
 
 
-Q: 
+Q: N Queen (https://practice.geeksforgeeks.org/problems/n-queen-problem0315/1)
 ```
+class Solution{
+
+    static ArrayList<ArrayList<Integer>> nQueen(int n) {
+        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+        int[][] board = new int[n][n];
+        helper(0, n, result, board);
+        return result;
+    }
+    
+    private static void helper(int row, int n, ArrayList<ArrayList<Integer>> result, int[][] board){
+        if(row == n){
+			ArrayList<Integer> list = new ArrayList<Integer>();
+			for(int i=0; i<n; i++){
+				for(int j=0; j<n; j++){
+					if(board[i][j] == 1){
+						list.add(j+1);	//why not i+1
+					}
+				}
+			}
+            result.add(list);
+            return;
+        }
+        
+        for(int i=0; i<n; i++){
+            if(isSafe(board, row, i, n)){
+                board[row][i] = 1;
+                helper(row+1, n, result, board);
+                board[row][i] = 0;
+            }
+        }
+        return;
+    }
+    
+    private static boolean isSafe(int[][] board, int row, int col, int n){
+		for(int i=0; i<row; i++){
+			if(board[i][col] == 1)
+				return false;
+		}
+		for(int i=row, j=col; i>=0 && j<n; i--, j++){
+			if(board[i][j] == 1)
+				return false;
+		}
+		for(int i=row, j=col; i>=0 && j>=0; i--, j--){
+			if(board[i][j] == 1)
+				return false;
+		}
+        return true;    
+    }
+}
 ```
 
 
