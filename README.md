@@ -469,48 +469,40 @@ Q: https://practice.geeksforgeeks.org/problems/rat-in-a-maze-problem/1#
 ```
 class Solution {
     
-    static ArrayList<String> result = new ArrayList<>();
-    
     public static ArrayList<String> findPath(int[][] arr, int N) {
+        ArrayList<String> result = new ArrayList<>();
         if(arr[0][0] == 0)  //unable to enter
             return result;
         int[][] visited = new int[N][N];
-        helper(arr, N, 0, 0, "", visited);
+        helper(arr, N, 0, 0, "", visited, result);
         return result;
     }
     
-    private static void helper(int[][] arr, int N, int r, int c, String path, int[][] visited){
+    private static void helper(int[][] arr, int N, int r, int c, String path, 
+        int[][] visited, ArrayList<String> result){
         if(r==(N-1) && c==(N-1)){ //reached destination
-            //System.out.println(r+":"+c+":"+path);
             result.add(path);
-            //System.out.println(result.size());
             return;
         }
-        
         visited[r][c] = 1;  //mark visited
-        
         if(isSafe(arr, r+1, c, N, visited))
-            helper(arr, N, r+1, c, path+"D", visited);   //move down
-            
+            helper(arr, N, r+1, c, path+"D", visited, result);   //move down
         if(isSafe(arr, r, c-1, N, visited))
-            helper(arr, N, r, c-1, path+"L", visited);   //move left
-            
+            helper(arr, N, r, c-1, path+"L", visited, result);   //move left
         if(isSafe(arr, r, c+1, N, visited))
-            helper(arr, N, r, c+1, path+"R", visited);   //move right
-            
+            helper(arr, N, r, c+1, path+"R", visited, result);   //move right
         if(isSafe(arr, r-1, c, N, visited))
-            helper(arr, N, r-1, c, path+"U", visited);   //move up    
-            
+            helper(arr, N, r-1, c, path+"U", visited, result);   //move up    
         visited[r][c] = 0;  //mark unvisited
-        return;
     }
     
     private static boolean isSafe(int[][] arr, int r, int c, int N, int[][] visited){
-        if( r<N && r>=0 && 
-            c<N && c>=0 &&
+        if( r>=0 && c>=0 && 
+            r<N && c<N && 
             arr[r][c] == 1 &&
-            visited[r][c] == 0)
+            visited[r][c] == 0){
             return true;
+        }
         return false;
     }
 }
