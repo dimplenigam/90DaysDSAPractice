@@ -510,8 +510,55 @@ class Solution {
 
 
 
-Q: 
+Q: https://practice.geeksforgeeks.org/problems/solve-the-sudoku-1587115621/1/
 ```
+class Solution
+{
+    //Function to find a solved Sudoku. 
+    static boolean SolveSudoku(int grid[][])
+    {
+        return helper(grid, 0, 0);
+    }
+    
+    private static boolean helper(int grid[][], int r, int c){
+        if(r==9) return true;
+        if(c==9) return helper(grid, r+1, 0);
+        if(grid[r][c] != 0) return helper(grid, r, c+1);
+        for(int i=1; i<=9; i++){
+            if(isSafe(grid, r, c, i)){
+                grid[r][c] = i;
+                if(helper(grid, r, c+1))
+                    return true;
+                grid[r][c] = 0;
+            }
+        }
+        return false;
+    }
+    
+    private static boolean isSafe(int grid[][], int r, int c, int value){
+        for(int i=0; i<9; i++)
+            if(grid[i][c] == value)
+                return false;
+        for(int i=0; i<9; i++)
+            if(grid[r][i] == value)
+                return false;
+        int start_r = r - (r%3);
+        int start_c = c - (c%3);
+        for(int i=start_r; i<start_r+3; i++)
+            for(int j=start_c; j<start_c+3; j++)
+                if(grid[i][j] == value)
+                    return false;
+        return true;
+    }
+    
+    //Function to print grids of the Sudoku.
+    static void printGrid (int grid[][])
+    {
+        for(int i=0; i<9; i++)
+            for(int j=0; j<9; j++)
+                System.out.print(grid[i][j]+" ");
+    }
+}
 ```
 
 
