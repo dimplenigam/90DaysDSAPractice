@@ -632,8 +632,43 @@ class Solution {
 
 
 
-Q: 
+Q: Quick Sort https://practice.geeksforgeeks.org/problems/quick-sort/1
 ```
+class Solution
+{
+    //Function to sort an array using quick sort algorithm.
+    static void quickSort(int arr[], int start, int end)
+    {
+        if(start<end){
+            int part = partition(arr, start, end);
+            quickSort(arr, start, part-1);
+            quickSort(arr, part+1, end);
+        }
+    }
+    
+    static int partition(int arr[], int start, int end)
+    {
+        int pivot = arr[end];
+        int i = start-1;
+        int j = start;
+        while(j < end){
+            if(arr[j] < pivot){
+                i++;
+                swap(arr, i, j);
+            }
+            j++;
+        }
+        swap(arr, i+1, end);
+        return i+1; //imp
+    }
+    
+    static void swap(int[] arr, int i, int j){
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        return;
+    }
+}
 ```
 
 
