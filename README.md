@@ -562,6 +562,255 @@ class Solution
 ```
 
 
+Q: Merge Sort https://leetcode.com/problems/sort-an-array/submissions/
+```
+class Solution {
+    public int[] sortArray(int[] nums) {
+        return mergeSort(nums, 0, nums.length-1);
+    }
+    
+    private int[] mergeSort(int[] nums, int start, int end){
+        //System.out.println("start:"+start +", end:"+end);
+        //base case
+        if(start>end){
+            int[] arr = new int[0];
+            //System.out.println("1--");
+            //System.out.println(Arrays.asList(arr));
+            return arr;
+        }
+        if(start == end){
+            int[] arr = {nums[start]};
+            //System.out.println("2--");
+            //System.out.println(Arrays.toString(arr));
+            return arr;
+        }
+        
+        //Calculate mid
+        int mid = (start + end)/2;
+        
+        //merge sort call
+        int[] A = mergeSort(nums, start, mid);
+        int[] B = mergeSort(nums, mid+1, end);
+        
+        //merge call
+        return merge(A, B);
+    }
+    
+    private int[] merge(int[] A, int[] B){
+        //Compare and fill result
+        int sizeA = A.length; int sizeB = B.length;
+        int[] result = new int[sizeA+sizeB];
+        int i=0, j=0, k=0;
+        while(i<sizeA && j<sizeB){
+            if(A[i] < B[j]){
+                result[k] = A[i];
+                i = i+1; 
+            }else{
+                result[k] = B[j];
+                j = j+1;
+            }
+            k = k+1;
+        }
+        //Add remaining elements from A
+        while(i < sizeA){
+            result[k] = A[i];
+            i = i+1; 
+            k = k+1;
+        }
+        //Add remaining elements from B
+        while(j < sizeB){
+            result[k] = B[j];
+            j = j+1;
+            k = k+1;
+        }  
+        //System.out.println(Arrays.toString(result));
+        return result;
+    }
+}
+```
+
+
+
+
+Q: 
+```
+```
+
+
+
+Q: 
+```
+```
+
+
+Q: 
+```
+```
+
+
+
+
+Q: 
+```
+```
+
+
+
+Q: 
+```
+```
+
+
+
+
+Q: 
+```
+```
+
+
+
+Q: 
+```
+```
+
+
+Q: 
+```
+```
+
+
+
+
+Q: 
+```
+```
+
+
+
+Q: 
+```
+```
+
+
+
+
+Q: 
+```
+```
+
+
+
+Q: 
+```
+```
+
+
+Q: 
+```
+```
+
+
+
+
+Q: 
+```
+```
+
+
+
+Q: 
+```
+```
+
+
+
+
+Q: 
+```
+```
+
+
+
+Q: 
+```
+```
+
+
+Q: 
+```
+```
+
+
+
+
+Q: 
+```
+```
+
+
+
+Q: 
+```
+```
+
+
+
+
+Q: 
+```
+```
+
+
+
+Q: 
+```
+```
+
+
+Q: 
+```
+```
+
+
+
+
+Q: 
+```
+```
+
+
+
+Q: 
+```
+```
+
+
+
+
+Q: 
+```
+```
+
+
+
+Q: 
+```
+```
+
+
+Q: 
+```
+```
+
+
+
+
+Q: 
+```
+```
+
+
+
 Q: 
 ```
 ```
