@@ -1,4 +1,4 @@
-```
+
 class Solution{
     static int searchInSorted(int arr[], int N, int K)
     {
@@ -16,4 +16,4 @@ class Solution{
         return -1;
     }
 }
-```
+
