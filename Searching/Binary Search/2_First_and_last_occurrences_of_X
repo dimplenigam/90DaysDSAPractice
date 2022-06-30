@@ -1,3 +1,6 @@
+LINK : https://practice.geeksforgeeks.org/problems/first-and-last-occurrences-of-x2041/1/
+
+
 class Solution{
     public ArrayList<Integer> firstAndLast(int arr[], int N, int x){
         ArrayList<Integer> list = new ArrayList<>();
