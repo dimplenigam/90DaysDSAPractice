@@ -31,4 +31,34 @@ class Solution{
 
 **Actual Solution**
 ```
+class Solution{
+    public ArrayList<Integer> firstAndLast(int arr[], int N, int x){
+        ArrayList<Integer> list = new ArrayList<>();
+        int first = helper(arr, N, x, true);
+        int last = helper(arr, N, x, false);
+        list.add(first); 
+        if(last != -1) list.add(last);
+        return list;
+    }
+    
+    private static int helper(int arr[], int N, int x, boolean isFirst){
+        int start=0, end=N-1, ans = -1;
+        
+        while(start<=end){
+            int mid = start + (end-start)/2;
+            if(arr[mid] > x)
+                end = mid-1;
+            else if(arr[mid] < x)
+                start = mid+1;
+            else if(arr[mid] == x){
+                if(isFirst)
+                    end = mid-1;
+                else
+                    start = mid+1;
+                ans = mid;
+            }
+        }
+        return ans;
+    }
+}
 ```
