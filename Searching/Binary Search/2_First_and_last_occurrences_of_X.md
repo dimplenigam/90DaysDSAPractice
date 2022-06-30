@@ -1,6 +1,6 @@
-**LINK : [First and last occurrences of X](https://practice.geeksforgeeks.org/problems/first-and-last-occurrences-of-x2041/1/)
+**LINK** : [First and last occurrences of X](https://practice.geeksforgeeks.org/problems/first-and-last-occurrences-of-x2041/1/)
 
-
+```
 class Solution{
     public ArrayList<Integer> firstAndLast(int arr[], int N, int x){
         ArrayList<Integer> list = new ArrayList<>();
@@ -24,6 +24,11 @@ class Solution{
         list.add(-1);
         return list;
     }
-    
-
 }
+```
+
+
+
+**Actual Solution**
+```
+```
