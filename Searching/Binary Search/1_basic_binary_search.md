@@ -25,7 +25,12 @@ class Solution{
 
 
 **Time Complexity : O(logn)**
-at any point in Binary Search, we are dividing array into half :
+at any interation in Binary Search, we are dividing array into half :
+    ![image](https://user-images.githubusercontent.com/66199489/179041165-5d09fb37-c9c1-4bcc-81db-9b4c23da3e5f.png)
 ![1_LFCevfPk3EhffpuFjT33vQ-removebg-preview](https://user-images.githubusercontent.com/66199489/179034819-7843f350-1e7b-4ac5-beb7-7457ae9a1a72.png)
 ![image](https://user-images.githubusercontent.com/66199489/179035091-70076a87-2307-4c35-bcde-6a2d528b4639.png)
+
+
+ashdgajsdhgjashgdjhgsad
+![image](https://user-images.githubusercontent.com/66199489/179041241-b0ececd6-7951-467a-9182-15eebf122993.png)
 
