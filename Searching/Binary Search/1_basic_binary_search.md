@@ -23,6 +23,9 @@ class Solution{
 
 
 
+
+**Time Complexity : O(logn)**
+at any point in Binary Search, we are dividing array into half :
 ![1_LFCevfPk3EhffpuFjT33vQ-removebg-preview](https://user-images.githubusercontent.com/66199489/179034819-7843f350-1e7b-4ac5-beb7-7457ae9a1a72.png)
 ![image](https://user-images.githubusercontent.com/66199489/179035091-70076a87-2307-4c35-bcde-6a2d528b4639.png)
 
