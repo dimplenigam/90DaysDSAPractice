@@ -1,4 +1,4 @@
-**LINK** : [Peak element](https://practice.geeksforgeeks.org/problems/peak-element/1?utm_source=youtube&utm_medium=collab_codefromscratch_description&utm_campaign=peakelement))
+**LINK** : [Peak element](https://practice.geeksforgeeks.org/problems/peak-element/1?utm_source=youtube&utm_medium=collab_codefromscratch_description&utm_campaign=peakelement)
 
 
 ```
