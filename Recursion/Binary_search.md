@@ -1,6 +1,8 @@
 
 **LINK** : [Searching an element in a sorted array](https://practice.geeksforgeeks.org/problems/who-will-win-1587115621/1?page=1&difficulty%5B%5D=-1&category%5B%5D=Binary%20Search&sortBy=submissions&utm_source=youtube&utm_medium=collab_codefromscratch_description&utm_campaign=sortedarray)
 
+### Due to Recusion, O(n) extra space is used. 
+
 ```
 class Solution{
     static int searchInSorted(int arr[], int N, int K)
